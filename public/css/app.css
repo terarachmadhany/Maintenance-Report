@@ -1,0 +1,426 @@
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: flex; /* Flexbox to center modal */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Set a max-width to prevent it from being too wide */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style Umum */
+body {
+    font-size: .875rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 250px;
+    padding-top: 48px;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color: #f8f9fa;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 10px;
+    color: #727272;
+}
+
+.sidebar .nav-link.active {
+    background-color: #e9ecef;
+    color: #2470dc;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    padding: 10px 20px;
+    background-color: #e9ecef;
+}
+
+/* Search and Filter Styles */
+.search-filter {
+    margin-bottom: 20px;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+/* Notification Styles */
+.notifications {
+    margin-bottom: 20px;
+}
+
+/* Document Table Styles */
+.document-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.document-table th,
+.document-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.document-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.document-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.document-table th[colspan="3"] {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Sidebar Submenu */
+.sidebar-submenu {
+    display: none;
+    background-color: rgba(0, 123, 255, 0.4); /* Background submenu */
+}
+
+.sidebar-submenu li {
+    padding: 10px;
+}
+
+.sidebar-submenu li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Active submenu */
+.sidebar .sidebar-submenu.show {
+    display: block;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: #007bff; /* Warna biru */
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    color: #fff; /* Warna font putih */
+    padding: .75rem 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    border: none;
+    background-color: #343a40;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border: 1px solid #ddd;
+}
+
+.navbar .nav-link {
+    color: #fff; /* Warna font putih */
+    text-decoration: none;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #e9ecef; /* Warna ketika hover atau fokus */
+}
+
+.navbar .nav-link.active {
+    color: #495057; /* Warna ketika di klik atau aktif */
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+button:hover {
+    color: #007bff;
+    background-color: #e9ecef;
+    border-color: #007bff;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 250px;
+    background-color: rgba(0, 123, 255, 0.6);
+    /* Warna biru dengan transparansi 60% */
+    color: white;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 0;
+    }
+}
+
+.sidebar-sticky {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: none;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:focus,
+.sidebar .nav-link:hover {
+    color: black;
+    background: none;
+}
+
+.sidebar-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 0 20px;
+    border-bottom: 1px solid #e9ecef;
+    /* Garis pemisah */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-toggler {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    color: white;
+    z-index: 101;
+    /* Above the sidebar */
+}
+
+.navbar-toggler.sidebar-hidden {
+    color: #007bff;
+    /* Warna biru ketika sidebar tersembunyi */
+}
+
+.sidebar .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #e9ecef;
+    /* Garis pemisah */
+}
+
+.sidebar .header-container img {
+    margin: 0;
+    max-width: 70%;
+    height: auto;
+}
+
+.sidebar .header-container .navbar-toggler {
+    margin-right: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+    /* Menyesuaikan dengan lebar sidebar */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.collapsed {
+    margin-left: 0;
+}
+
+.sidebar-submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar-submenu.show {
+    display: block;
+}
+
+/* Logout Button Styles */
+.logout-button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Putih dengan transparansi 60% */
+    color: #007bff;
+    /* Warna teks logout */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    margin: 10px;
+    /* Spacing from sides and bottom */
+    width: calc(100% - 20px);
+    /* Mengisi lebar sidebar dengan margin */
+    cursor: pointer;
+    box-sizing: border-box;
+    /* Untuk memastikan padding tidak membuat elemen melebar */
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Putih dengan transparansi 80% pada hover */
+}
+
